@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Hello</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">空白页面</string>
+    <string name="hello_download_button">开始下载</string>
+    <string name="hello_cancel_button">取消下载</string>
+
+    <string name="hello_load_cancel">加载取消</string>
+    <string name="hello_load_done">加载完毕</string>
+    <string name="hello_load_process">加载中...</string>
+</resources>
