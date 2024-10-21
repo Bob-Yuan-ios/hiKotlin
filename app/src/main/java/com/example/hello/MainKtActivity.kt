@@ -12,12 +12,18 @@ import com.example.dataRequests.notice.NoticeCoroutinesViewModel
 class MainKtActivity: AppCompatActivity() {
 
     private var showDataView: TextView? = null
-    private val viewModel by lazy { ViewModelProvider(this).get(NoticeCoroutinesViewModel::class.java) }
+    private val viewModel by lazy {
+        ViewModelProvider(this).get(NoticeCoroutinesViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.my_fragment)
         initView()
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
         startObserver()
     }
 
@@ -38,13 +44,12 @@ class MainKtActivity: AppCompatActivity() {
                         text.append(it.comment + "\n")
                     }
                     showDataView?.text = text
-                    Log.i("my111===", it.toString())
                 }
             }
         })
 
         viewModel.apiError.observe(this, Observer {
-
+            Log.i("my111", "数据请求出错")
         })
     }
 }
