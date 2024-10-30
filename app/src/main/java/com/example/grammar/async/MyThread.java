@@ -1,4 +1,4 @@
-package com.example.grammar.asyncs;
+package com.example.grammar.async;
 
 /*
 *   优点： 封装了线程操作所需方法

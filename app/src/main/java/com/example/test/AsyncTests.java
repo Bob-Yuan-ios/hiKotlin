@@ -6,9 +6,9 @@ import android.content.Intent;
 
 import android.util.Log;
 
-import com.example.grammar.asyncs.MyAsyncTask;
-import com.example.grammar.asyncs.MyHandler;
-import com.example.grammar.asyncs.MyTaskCallback;
+import com.example.grammar.async.MyAsyncTask;
+import com.example.grammar.async.MyHandler;
+import com.example.grammar.async.MyTaskCallback;
 import com.example.utils.MyApplication;
 
 import java.util.concurrent.ExecutorService;

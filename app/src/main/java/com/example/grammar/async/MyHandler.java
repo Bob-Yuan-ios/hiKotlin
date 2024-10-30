@@ -1,4 +1,4 @@
-package com.example.grammar.asyncs;
+package com.example.grammar.async;
 
 import android.os.Handler;
 import android.os.Message;

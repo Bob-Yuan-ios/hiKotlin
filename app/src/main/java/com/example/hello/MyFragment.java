@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.grammar.asyncs.MyTaskCallback;
+import com.example.grammar.async.MyTaskCallback;
 import com.example.utils.MyOpResources;
 
 public class MyFragment extends Fragment {
