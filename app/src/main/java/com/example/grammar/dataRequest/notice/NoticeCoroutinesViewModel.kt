@@ -20,7 +20,7 @@ class NoticeCoroutinesViewModel: ViewModel() {
 
         val exception = CoroutineExceptionHandler { _, throwable ->
             apiError.postValue(throwable)
-            Log.i("CoroutinesViewModel",throwable.message!!)
+            Log.i("my111",throwable.message!!)
         }
 
         viewModelScope.launch(exception) {

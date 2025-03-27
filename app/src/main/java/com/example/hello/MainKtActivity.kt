@@ -11,11 +11,13 @@ import com.example.dataRequests.notice.NoticeCoroutinesViewModel
 
 class MainKtActivity: AppCompatActivity() {
 
+    // 属性
     private var showDataView: TextView? = null
     private val viewModel by lazy {
         ViewModelProvider(this).get(NoticeCoroutinesViewModel::class.java)
     }
 
+    // 生命周期方法
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.my_fragment)
@@ -27,6 +29,12 @@ class MainKtActivity: AppCompatActivity() {
         startObserver()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        removeObserver()
+    }
+
+    // 初始化视图和数据
     private fun initView(){
         val downloadBtn = findViewById<Button>(R.id.my_excButton)
         downloadBtn.setOnClickListener{
@@ -35,6 +43,7 @@ class MainKtActivity: AppCompatActivity() {
         showDataView = findViewById(R.id.my_liveData)
     }
 
+    // 开启监听
     private fun startObserver(){
         viewModel.articlesLiveData.observe(this, Observer {
             it?.run {
@@ -49,7 +58,14 @@ class MainKtActivity: AppCompatActivity() {
         })
 
         viewModel.apiError.observe(this, Observer {
-            Log.i("my111", "数据请求出错")
+            Log.i("my111", "数据请求出错原因:\n" + it.message.toString())
         })
     }
+
+    // 移除监听
+    private fun removeObserver(){
+        viewModel.articlesLiveData.removeObservers(this);
+        viewModel.apiError.removeObservers(this);
+    }
+
 }

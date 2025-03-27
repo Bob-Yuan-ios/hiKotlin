@@ -34,14 +34,12 @@ public class MainActivity extends AppCompatActivity implements MyFragment.OnData
         mFragment = (MyFragment) getSupportFragmentManager().
                 findFragmentById(R.id.my_fragment);
 
-        findViewById(R.id.my_excButton).setOnClickListener(
-            v -> {
+        findViewById(R.id.my_excButton).setOnClickListener(v -> {
                 asyncTests.asyncTaskExecute(mFragment.getMyTaskCallback());
             }
         );
 
-        findViewById(R.id.my_cancelButton).setOnClickListener(
-            v -> {
+        findViewById(R.id.my_cancelButton).setOnClickListener(v -> {
                 asyncTests.asyncTaskCancel();
             }
         );
@@ -55,14 +53,16 @@ public class MainActivity extends AppCompatActivity implements MyFragment.OnData
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(
-                    systemBars.left,
-                    systemBars.top,
-                    systemBars.right,
-                    systemBars.bottom);
-            return insets;
+        ViewCompat.setOnApplyWindowInsetsListener(
+                findViewById(R.id.main),
+                (v, insets) -> {
+                    Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                    v.setPadding(
+                            systemBars.left,
+                            systemBars.top,
+                            systemBars.right,
+                            systemBars.bottom);
+                    return insets;
         });
 
         Log.i("my111", "创建结束");
