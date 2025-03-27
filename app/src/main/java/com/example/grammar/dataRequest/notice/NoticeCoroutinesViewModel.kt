@@ -16,7 +16,7 @@ class NoticeCoroutinesViewModel: ViewModel() {
     var apiError:MutableLiveData<Throwable> = MutableLiveData()
 
     @SuppressLint("NullSafeMutableLiveData")
-    fun getArticles(page: Int) {
+    fun getArticles() {
 
         val exception = CoroutineExceptionHandler { _, throwable ->
             apiError.postValue(throwable)

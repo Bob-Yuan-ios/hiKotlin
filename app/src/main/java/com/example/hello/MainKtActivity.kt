@@ -38,7 +38,7 @@ class MainKtActivity: AppCompatActivity() {
     private fun initView(){
         val downloadBtn = findViewById<Button>(R.id.my_excButton)
         downloadBtn.setOnClickListener{
-            viewModel.getArticles(1)
+            viewModel.getArticles()
         }
         showDataView = findViewById(R.id.my_liveData)
     }
