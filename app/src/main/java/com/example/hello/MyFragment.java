@@ -19,6 +19,7 @@ import com.example.utils.MyOpResources;
 
 public class MyFragment extends Fragment {
 
+    // 属性
     private TextView liveDataTextView;        // 文本显示框
 
     private TextView textView;                // 文本显示框
@@ -27,6 +28,7 @@ public class MyFragment extends Fragment {
     private OnDataChangeListener listener;    // 回传操作给Activity
     private MyTaskCallback myTaskCallback;    // 响应异步数据更新
 
+    // 生命周期方法
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,13 +55,11 @@ public class MyFragment extends Fragment {
         listener = (OnDataChangeListener) context;
     }
 
+    // 接口，暴露给外部使用
     public interface OnDataChangeListener {
         void onDataChanged(String newData);
     }
 
-    public void updateLiveData(String newData){
-        liveDataTextView.setText(newData);
-    }
 
     private void updateText(String thisIsDataFromActivity) {
         textView.setText(thisIsDataFromActivity);

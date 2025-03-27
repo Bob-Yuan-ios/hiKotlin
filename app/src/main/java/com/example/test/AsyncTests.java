@@ -26,6 +26,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class AsyncTests {
 
+    //asyncTask
     private MyAsyncTask mTask;
     public void asyncTaskExecute(MyTaskCallback callback){
         if(null == mTask){
@@ -63,6 +64,8 @@ public class AsyncTests {
         MyApplication.getAppContext().startService(i2);
     }
 
+
+    //handler
     MyHandler myHandler;
     public void handleTask(){
         myHandler = new MyHandler();
@@ -87,6 +90,7 @@ public class AsyncTests {
         }.start();
     }
 
+    //
     public void threadPoolTest(){
 
         // 定长线程
