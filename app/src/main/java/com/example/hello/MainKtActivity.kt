@@ -30,8 +30,8 @@ class MainKtActivity: AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         removeObserver()
+        super.onDestroy()
     }
 
     // 初始化视图和数据
