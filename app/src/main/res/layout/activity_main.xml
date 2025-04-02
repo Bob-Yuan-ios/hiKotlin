@@ -6,12 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<!--        <fragment-->
-<!--            android:id="@+id/my_fragment"-->
-<!--            android:name="com.example.hello.MyFragment"-->
-<!--            android:paddingTop="@android:dimen/notification_large_icon_height"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent" />-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
