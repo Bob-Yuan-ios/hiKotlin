@@ -43,6 +43,7 @@ public class AsyncTests {
 
     public void asyncTaskCancel(){
         if(null != mTask){
+            Log.i("my111", "取消任务");
             mTask.cancel(true);
             mTask = null;
         }else {
