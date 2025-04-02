@@ -1,6 +1,8 @@
 package com.example.grammar.async;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
+import android.util.Log;
 
 public class MyAsyncTask extends AsyncTask {
 
@@ -14,6 +16,7 @@ public class MyAsyncTask extends AsyncTask {
 
     }
 
+    @SuppressLint("WrongThread")
     @Override
     protected Object doInBackground(Object[] objects) {
         try{
@@ -22,9 +25,10 @@ public class MyAsyncTask extends AsyncTask {
 
             while (count < 99){
                 count += length;
-                publishProgress(count);
+                onProgressUpdate(new Integer[]{count});
                 Thread.sleep(500); //模拟耗时任务：例如下载数据package
             }
+            onPostExecute(null);
         }catch (InterruptedException e){
             e.printStackTrace();
         }
