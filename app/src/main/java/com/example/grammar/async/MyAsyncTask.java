@@ -25,10 +25,9 @@ public class MyAsyncTask extends AsyncTask {
 
             while (count < 99){
                 count += length;
-                onProgressUpdate(new Integer[]{count});
+                publishProgress(count);
                 Thread.sleep(500); //模拟耗时任务：例如下载数据package
             }
-            onPostExecute(null);
         }catch (InterruptedException e){
             e.printStackTrace();
         }

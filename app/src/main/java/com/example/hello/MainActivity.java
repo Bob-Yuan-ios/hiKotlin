@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onComplete() {
-//                    updateText(getAsyncDone(R.string.hello_load_done, 100));
-//                    updateProgressBar(100);
+                    updateText(getAsyncDone(R.string.hello_load_done, 100));
+                    updateProgressBar(100);
                     Log.i("my111", "activity onComplete");
                 }
             };
