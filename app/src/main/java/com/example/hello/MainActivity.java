@@ -4,15 +4,16 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.hello.databinding.ActivityMainBinding;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.grammar.async.MyTaskCallback;
-import com.example.hello.databinding.ActivityMainBinding;
 import com.example.test.AsyncTests;
+import com.example.grammar.async.MyTaskCallback;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AsyncTests asyncTests;
     private MyTaskCallback myTaskCallback;    // 响应异步数据更新
-    private OnDataChangeListener listener;    // 回传操作给Activity
 
     @Override
     protected void onResume() {
@@ -68,11 +68,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Log.i("my111", "创建结束");
-    }
-
-    // 接口，暴露给外部使用
-    public interface OnDataChangeListener {
-        void onDataChanged(String newData);
     }
 
     public MyTaskCallback getMyTaskCallback() {
