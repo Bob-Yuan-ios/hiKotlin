@@ -10,12 +10,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.grammar.async.MyTaskCallback;
+import com.example.hello.databinding.ActivityMainBinding;
 import com.example.test.AsyncTests;
 
-public class MainActivity extends AppCompatActivity implements MyFragment.OnDataChangeListener {
+public class MainActivity extends AppCompatActivity {
 
-    MyFragment mFragment;
+    private ActivityMainBinding binding;
+
     private AsyncTests asyncTests;
+    private MyTaskCallback myTaskCallback;    // 响应异步数据更新
+    private OnDataChangeListener listener;    // 回传操作给Activity
 
     @Override
     protected void onResume() {
@@ -31,27 +36,24 @@ public class MainActivity extends AppCompatActivity implements MyFragment.OnData
         super.onAttachedToWindow();
         Log.i("my111", "绑定");
 
-        mFragment = (MyFragment) getSupportFragmentManager().
-                findFragmentById(R.id.my_fragment);
+        binding.myExcButton.setOnClickListener( v -> {
+            Log.i("my111", "hello task");
+            asyncTests.asyncTaskExecute(getMyTaskCallback());
+        });
 
-        findViewById(R.id.my_excButton).setOnClickListener(v -> {
-                asyncTests.asyncTaskExecute(mFragment.getMyTaskCallback());
-            }
-        );
-
-        findViewById(R.id.my_cancelButton).setOnClickListener(v -> {
-                asyncTests.asyncTaskCancel();
-            }
-        );
+        binding.myCancelButton.setOnClickListener(v -> {
+            asyncTests.asyncTaskCancel();
+        });
     }
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main),
@@ -68,9 +70,32 @@ public class MainActivity extends AppCompatActivity implements MyFragment.OnData
         Log.i("my111", "创建结束");
     }
 
-    @Override
-    public void onDataChanged(String newData) {
-        String appendData = "加载状态更新:(" + newData + ")";
-        Log.i("my111", appendData);
+    // 接口，暴露给外部使用
+    public interface OnDataChangeListener {
+        void onDataChanged(String newData);
+    }
+
+    public MyTaskCallback getMyTaskCallback() {
+        if(null == myTaskCallback){
+            myTaskCallback = new MyTaskCallback() {
+                public void onCancel() {
+//                    updateText(getAsyncDone(R.string.hello_load_cancel, 0));
+//                    updateProgressBar(0);
+                }
+
+                @Override
+                public void onProcess(Integer process) {
+//                    updateText(getAsyncString(R.string.hello_load_process, process));
+//                    updateProgressBar(process);
+                }
+
+                @Override
+                public void onComplete() {
+//                    updateText(getAsyncDone(R.string.hello_load_done, 100));
+//                    updateProgressBar(100);
+                }
+            };
+        }
+        return myTaskCallback;
     }
 }

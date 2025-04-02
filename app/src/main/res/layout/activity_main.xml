@@ -6,11 +6,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-        <fragment
-            android:id="@+id/my_fragment"
-            android:name="com.example.hello.MyFragment"
-            android:paddingTop="@android:dimen/notification_large_icon_height"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+<!--        <fragment-->
+<!--            android:id="@+id/my_fragment"-->
+<!--            android:name="com.example.hello.MyFragment"-->
+<!--            android:paddingTop="@android:dimen/notification_large_icon_height"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:background="@color/teal_200"
+        android:orientation="vertical">
+                <Button
+                    android:id="@+id/my_excButton"
+                    style="@style/ButtonMargin"
+                    android:layout_width="match_parent"
+                    android:text="@string/hello_download_button" />
+
+                <ProgressBar
+                    android:id="@+id/my_progress"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp" />
+
+                <TextView
+                    android:id="@+id/my_textView"
+                    style="@style/TextViewMargin"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/my_liveData"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:includeFontPadding="false"
+                    android:maxLines="100"
+                    android:text="--"  />
+                <Button
+                    android:id="@+id/my_cancelButton"
+                    style="@style/ButtonMargin"
+                    android:text="@string/hello_cancel_button" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
