@@ -2,7 +2,6 @@ package com.example.grammar.async;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
-import android.util.Log;
 
 public class MyAsyncTask extends AsyncTask {
 

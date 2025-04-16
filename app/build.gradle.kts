@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.cli.jvm.main
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -10,7 +12,13 @@ android {
     viewBinding {
         enable = true
     }
-    
+
+    //sourceSets["main"].java.srcDirs("../tools", "src/main/java")
+    sourceSets["main"].java.srcDirs(
+        "../customTools",
+        "../customUtils"
+    )
+
     defaultConfig {
         applicationId = "com.example.hello"
         minSdk = 24
