@@ -15,6 +15,7 @@ android {
 
     //sourceSets["main"].java.srcDirs("../tools", "src/main/java")
     sourceSets["main"].java.srcDirs(
+        "src/main/java",
         "../customTools",
         "../customUtils"
     )
