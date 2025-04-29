@@ -34,6 +34,7 @@ class MainKtActivity: AppCompatActivity() {
         super.onDestroy()
     }
 
+    /*    私有方法   */
     // 初始化视图和数据
     private fun initView(){
         val downloadBtn = findViewById<Button>(R.id.my_excButton)

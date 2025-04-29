@@ -58,7 +58,8 @@ public class LoginActivity extends AppCompatActivity {
                 .debounce(100, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread());
 
-        compositeDisposable.add(Observable.combineLatest(
+        compositeDisposable
+                .add(Observable.combineLatest(
                         usernameOb,
                         passwordOb,
                 new BiFunction<CharSequence, CharSequence, Object>() {
