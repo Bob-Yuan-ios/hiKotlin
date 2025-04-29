@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
-    //生命周期方法
+    /***   生命周期方法   ***/
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    //私有方法
+    /***   私有方法   ***/
     //检测用户输入
     private void observeInput() {
         Observable<CharSequence> usernameOb = RxTextView.textChanges(binding.etUsername)
