@@ -57,6 +57,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // RxJava2
+    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+
+    // RxBinding for EditText
+    implementation("com.jakewharton.rxbinding2:rxbinding:2.2.0")
+
+
     // kotlin （我这里用的是Kotlin语言）
     implementation("androidx.core:core-ktx:1.3.2")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
