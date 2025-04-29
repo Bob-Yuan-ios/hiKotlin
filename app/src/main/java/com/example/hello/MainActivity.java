@@ -24,10 +24,11 @@ public class MainActivity extends AppCompatActivity {
     private AsyncTests asyncTests;
     private MyTaskCallback myTaskCallback;    // 响应异步数据更新
 
+    /* 生命周期方法 */
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i("my111", "↩️");
+        Log.i("my111", "控件状态恢复");
         if(null == asyncTests){
             asyncTests = new AsyncTests();
         }
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        Log.i("my111", "绑定");
+        Log.i("my111", "绑定视图窗口");
 
         binding.myExcButton.setOnClickListener( v -> {
             Log.i("my111", "启动异步任务事件");
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
+        Log.i("my111", "创建窗口开发");
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -70,14 +73,15 @@ public class MainActivity extends AppCompatActivity {
                     return insets;
         });
 
-        Log.i("my111", "创建结束");
+        Log.i("my111", "创建窗口结束");
     }
 
-    public MyTaskCallback getMyTaskCallback() {
+    /* 私有方法 */
+    private MyTaskCallback getMyTaskCallback() {
         if(null == myTaskCallback){
             myTaskCallback = new MyTaskCallback() {
                 public void onCancel() {
-                    updateText(getAsyncDone(R.string.hello_load_cancel, 0));
+                    updateText(getAsyncDone(R.string.hello_load_cancel));
                     updateProgressBar(0);
                     Log.i("my111", "activity cancel");
                 }
@@ -91,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onComplete() {
-                    updateText(getAsyncDone(R.string.hello_load_done, 100));
+                    updateText(getAsyncDone(R.string.hello_load_done));
                     updateProgressBar(100);
                     Log.i("my111", "activity onComplete");
                 }
@@ -110,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         binding.myProgress.setProgress(process, true);
     }
 
-    private String  getAsyncDone(@StringRes int ResId, Integer value){
+    private String getAsyncDone(@StringRes int ResId){
         return MyOpResources.getString(ResId);
     }
 
