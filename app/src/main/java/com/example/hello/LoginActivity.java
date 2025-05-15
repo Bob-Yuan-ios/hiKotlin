@@ -19,7 +19,7 @@ import io.reactivex.functions.BiFunction;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     /***   生命周期方法   ***/
     @Override
