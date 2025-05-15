@@ -48,14 +48,15 @@ public class LoginActivity extends AppCompatActivity {
     /***   私有方法   ***/
     //检测用户输入
     private void observeInput() {
+        long detectFrequency = 100;
         Observable<CharSequence> usernameOb = RxTextView.textChanges(binding.etUsername)
                 .skipInitialValue()
-                .debounce(100, TimeUnit.MILLISECONDS)
+                .debounce(detectFrequency, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread());
 
         Observable<CharSequence> passwordOb = RxTextView.textChanges(binding.etPassword)
                 .skipInitialValue()
-                .debounce(100, TimeUnit.MILLISECONDS)
+                .debounce(detectFrequency, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread());
 
         compositeDisposable
