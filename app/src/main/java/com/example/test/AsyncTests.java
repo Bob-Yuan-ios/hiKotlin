@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-/*
+/** @noinspection unchecked*/ /*
  *  测试用例 --     对比不同方式实现多线程功能开发
  *  Thread:        高度封装不灵活、一个Thread任务完成后会自动销毁（创建和销毁线程，消耗资源）
  *  Runnable:      线程协作完成任务，共享资源（多个线程完成1个任务）
@@ -31,11 +31,7 @@ public class AsyncTests {
     public void asyncTaskExecute(MyTaskCallback callback){
         if(null == mTask){
             mTask = new MyAsyncTask(callback);
-            if (null != mTask){
-                mTask.execute();
-            }else {
-                Log.i("my111", "没有对象");
-            }
+            mTask.execute();
         }else {
             Log.i("my111", "初始化不完整||任务执行中");
         }
