@@ -9,7 +9,7 @@ import android.util.Log;
 import com.example.grammar.async.MyHandler;
 import com.example.grammar.async.MyAsyncTask;
 import com.example.grammar.async.MyTaskCallback;
-import com.example.hello.MyApplication;
+import com.example.MyApplication;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -4,7 +4,7 @@ import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
-import com.example.hello.MyApplication;
+import com.example.MyApplication;
 
 public class MyOpResources {
 
