@@ -14,7 +14,6 @@ public class ProductViewModel extends ViewModel {
     private final MutableLiveData<List<Product>> production = new MutableLiveData<>();
     private final ProductRepository productRepository;
 
-
     public ProductViewModel(ProductRepository productRepository){
         this.productRepository = productRepository;
         loadProduct();

@@ -1,7 +1,6 @@
 package feature.productlist.presentation;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.productlist.R;
-
-import java.util.logging.Logger;
 
 import data.product.impl.ProductRepositoryImpl;
 import domain.product.respository.ProductRepository;
