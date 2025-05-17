@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.dataRequests.notice.NoticeCoroutinesViewModel
+import feature.noticelist.presentation.NoticeCoroutinesViewModel
 
 class MainKtActivity: AppCompatActivity() {
 

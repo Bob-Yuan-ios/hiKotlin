@@ -1,5 +1,6 @@
-package com.example.dataRequests.notice
+package feature.noticelist.domain
 
+import feature.noticelist.data.NoticeResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

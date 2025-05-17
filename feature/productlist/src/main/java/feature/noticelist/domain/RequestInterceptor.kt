@@ -1,4 +1,4 @@
-package com.example.dataRequests.interceptor
+package feature.noticelist.domain
 
 import okhttp3.Interceptor
 import okhttp3.Response

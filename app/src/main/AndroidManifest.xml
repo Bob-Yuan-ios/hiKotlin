@@ -31,13 +31,6 @@
 
         <activity android:name="feature.productlist.presentation.ProductActivity" />
 
-        <service android:name="com.example.grammar.async.MyIntentService"
-                 android:exported="true"
-            tools:ignore="Instantiatable">
-            <intent-filter >
-                <action android:name="com.qq.music"/>
-            </intent-filter>
-        </service>
 
     </application>
 

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.MyApplication;
 import com.example.hello.databinding.ActivityMainBinding;
 
 import androidx.activity.EdgeToEdge;
@@ -13,26 +14,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.test.AsyncTests;
-import com.example.grammar.async.MyTaskCallback;
-import com.example.utils.MyOpResources;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    private AsyncTests asyncTests;
-    private MyTaskCallback myTaskCallback;    // 响应异步数据更新
 
-    /* 生命周期方法 */
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i("my111", "控件状态恢复");
-        if(null == asyncTests){
-            asyncTests = new AsyncTests();
-        }
-    }
 
     @Override
     public void onAttachedToWindow() {
@@ -41,12 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding.myExcButton.setOnClickListener( v -> {
             Log.i("my111", "启动异步任务事件");
-            asyncTests.asyncTaskExecute(getMyTaskCallback());
         });
 
         binding.myCancelButton.setOnClickListener(v -> {
             Log.i("my111", "取消异步任务事件");
-            asyncTests.asyncTaskCancel();
         });
     }
 
@@ -76,33 +61,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i("my111", "创建窗口结束");
     }
 
-    /* 私有方法 */
-    private MyTaskCallback getMyTaskCallback() {
-        if(null == myTaskCallback){
-            myTaskCallback = new MyTaskCallback() {
-                public void onCancel() {
-                    updateText(getAsyncDone(R.string.hello_load_cancel));
-                    updateProgressBar(0);
-                    Log.i("my111", "activity cancel");
-                }
-
-                @Override
-                public void onProcess(Integer process) {
-                    updateText(getAsyncString(R.string.hello_load_process, process));
-                    updateProgressBar(process);
-                    Log.i("my111", "activity onProcess:" + process);
-                }
-
-                @Override
-                public void onComplete() {
-                    updateText(getAsyncDone(R.string.hello_load_done));
-                    updateProgressBar(100);
-                    Log.i("my111", "activity onComplete");
-                }
-            };
-        }
-        return myTaskCallback;
-    }
 
     private  void updateText(String text){
         if (text != null){
@@ -115,11 +73,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getAsyncDone(@StringRes int ResId){
-        return MyOpResources.getString(ResId);
+        return getString1(ResId);
     }
 
     private String getAsyncString(@StringRes int ResId, Integer value) {
-        return MyOpResources.getString(ResId) + value;
+        return getString1(ResId) + value;
     }
 
+    private String getString1(@StringRes int ResId){
+        return MyApplication.getAppContext().getString(ResId);
+    }
 }

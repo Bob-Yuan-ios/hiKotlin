@@ -1,5 +1,6 @@
-package com.example.dataRequests.notice
+package feature.noticelist.data
 
+import feature.noticelist.domain.NoticeApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 

@@ -5,23 +5,23 @@ plugins {
 
 android {
     namespace = "com.example.hello"
-    compileSdk = 34
+    compileSdk = 35
 
     viewBinding {
         enable = true
     }
 
-    //sourceSets["main"].java.srcDirs("../tools", "src/main/java")
-    sourceSets["main"].java.srcDirs(
-        "src/main/java",
-        "../customTools",
-        "../customUtils"
-    )
+    // 设置主工程目录；可扩展设置资源目录
+//    sourceSets["main"].java.srcDirs(
+//        "src/main/java",
+//        "../customTools",
+//        "../customUtils"
+//    )
 
     defaultConfig {
         applicationId = "com.example.hello"
-        minSdk = 24
-        targetSdk = 34
+        minSdk = 26
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -37,6 +37,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -48,23 +49,26 @@ android {
 
 dependencies {
 
+    // 自有的
+    implementation(project(":feature:productlist"))
+
+    // 系统的
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(project(":feature:productlist"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // 三方的
     // RxJava2
     implementation("io.reactivex.rxjava2:rxjava:2.2.21")
     implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
 
     // RxBinding for EditText
     implementation("com.jakewharton.rxbinding2:rxbinding:2.2.0")
-
 
     // kotlin （我这里用的是Kotlin语言）
     implementation("androidx.core:core-ktx:1.3.2")
@@ -83,9 +87,9 @@ dependencies {
     // 协程
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4")
 
-    // 网络请求
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
+//    // 网络请求
+//    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+//    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+//    implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
     implementation(kotlin("script-runtime"))
 }

@@ -1,4 +1,4 @@
-package com.example.dataRequests.notice
+package feature.noticelist.data
 
 data class NoticeBean(
     val updateStatus: String,

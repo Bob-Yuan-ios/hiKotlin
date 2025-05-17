@@ -1,10 +1,12 @@
-package com.example.dataRequests.notice
+package feature.noticelist.presentation
 
 import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import feature.noticelist.data.NoticeBean
+import feature.noticelist.data.NoticeRetrofitManger
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
