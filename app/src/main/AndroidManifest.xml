@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="feature.productlist.presentation.ProductActivity" />
 
         <service android:name="com.example.grammar.async.MyIntentService"
                  android:exported="true"

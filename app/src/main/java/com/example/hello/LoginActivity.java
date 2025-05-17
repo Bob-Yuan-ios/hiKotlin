@@ -1,5 +1,6 @@
 package com.example.hello;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.activity.EdgeToEdge;
@@ -11,6 +12,7 @@ import com.jakewharton.rxbinding2.widget.RxTextView;
 
 import java.util.concurrent.TimeUnit;
 
+import feature.productlist.presentation.ProductActivity;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -33,6 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         observeInput();
         binding.btnLogin.setOnClickListener( v -> {
             Log.i("my111", "成功登录");
+
+            Intent intent = new Intent(this, feature.productlist.presentation.ProductActivity.class);
+            this.startActivity(intent);
         });
     }
 
