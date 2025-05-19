@@ -4,11 +4,9 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.MyApplication;
 import com.example.hello.databinding.ActivityMainBinding;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -18,8 +16,6 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-
-
 
     @Override
     public void onAttachedToWindow() {
@@ -59,28 +55,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Log.i("my111", "创建窗口结束");
-    }
-
-
-    private  void updateText(String text){
-        if (text != null){
-            binding.myTextView.setText(text);
-        }
-    }
-
-    private void updateProgressBar(Integer process){
-        binding.myProgress.setProgress(process, true);
-    }
-
-    private String getAsyncDone(@StringRes int ResId){
-        return getString1(ResId);
-    }
-
-    private String getAsyncString(@StringRes int ResId, Integer value) {
-        return getString1(ResId) + value;
-    }
-
-    private String getString1(@StringRes int ResId){
-        return MyApplication.getAppContext().getString(ResId);
     }
 }
