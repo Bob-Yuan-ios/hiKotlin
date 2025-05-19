@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.productlist"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26

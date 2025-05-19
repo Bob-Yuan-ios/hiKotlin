@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.hello"
-    compileSdk = 35
+    compileSdk = 34
 
     viewBinding {
         enable = true
@@ -87,9 +87,5 @@ dependencies {
     // 协程
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4")
 
-//    // 网络请求
-//    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-//    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-//    implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
     implementation(kotlin("script-runtime"))
 }
