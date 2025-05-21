@@ -4,9 +4,10 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import java.util.TreeMap
 
+@Suppress("UNREACHABLE_CODE")
 class RequestInterceptor : Interceptor {
 
-    private val TAG = "RequestInterceptor";
+    private val s = "RequestInterceptor";
 
     override fun intercept(chain: Interceptor.Chain): Response {
         TODO("Not yet implemented")

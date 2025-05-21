@@ -35,7 +35,7 @@ class NoticeCoroutinesViewModel: ViewModel() {
             Log.i("my111", response.toString())
 
             if ("success" == response.code) {
-                articlesLiveData.postValue(mutableListOf(response.data!!))
+                articlesLiveData.postValue(mutableListOf(response.data))
             }else {
                 articlesLiveData.postValue(mutableListOf())
             }
