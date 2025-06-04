@@ -8,4 +8,7 @@
     <string name="hello_load_cancel">加载取消</string>
     <string name="hello_load_done">加载完毕</string>
     <string name="hello_load_process">加载中...</string>
+
+    <string name="instrumentation_name">com.example.hello.MyInstrumentation</string>
+
 </resources>

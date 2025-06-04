@@ -9,7 +9,6 @@ import domain.product.respository.ProductRepository;
 public class ProductRepositoryImpl implements ProductRepository {
 
     /**
-     * @return
      */
     @Override
     public List<Product> getProductList() {

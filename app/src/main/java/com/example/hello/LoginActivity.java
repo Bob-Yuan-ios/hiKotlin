@@ -8,9 +8,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hello.databinding.ActivityLoginBinding;
-import com.jakewharton.rxbinding2.widget.RxTextView;
 
 import java.util.concurrent.TimeUnit;
+import com.jakewharton.rxbinding2.widget.RxTextView;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     /***   生命周期方法   ***/
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+        Log.i("my111", "LoginActivity -> onCreate");
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
@@ -38,6 +40,13 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, feature.productlist.presentation.ProductActivity.class);
             this.startActivity(intent);
         });
+
+    }
+
+    @Override
+    protected void onResume() {
+        Log.i("my111", "LoginActivity -> onResume");
+        super.onResume();
     }
 
     @Override

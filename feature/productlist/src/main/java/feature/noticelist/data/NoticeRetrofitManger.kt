@@ -12,7 +12,9 @@ import java.util.concurrent.TimeUnit
 
 object NoticeRetrofitManger {
 
-    private var mApi: NoticeApi? = null
+    @Volatile
+    private var mApi: NoticeApi? = null //保证变量在多线程间立即可见，防止指令重排
+
     private const val READ_TIME_OUT = 10L
     private const val CONNECTION_TIME_OUT = 10L
 
@@ -21,16 +23,23 @@ object NoticeRetrofitManger {
     fun getApiService(): NoticeApi {
         if (null == mApi){
             synchronized(this){
-                val okHttpClient = buildOKHttpClient()
-                mApi = buildRetrofit(
-                    API_URL,
-                    okHttpClient
-                ).create(NoticeApi::class.java)
+                if(null == mApi){
+                    val okHttpClient = buildOKHttpClient()
+                    mApi = buildRetrofit(
+                        API_URL,
+                        okHttpClient
+                    ).create(NoticeApi::class.java)
+                }
             }
         }
 
         return mApi!!
     }
+
+//    val mApi: NoticeApi by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+//        val okHttpClient = buildOKHttpClient()
+//        buildRetrofit(API_URL, okHttpClient).create(NoticeApi::class.java)
+//    }
 
     private fun buildOKHttpClient(): OkHttpClient.Builder{
         val logging = HttpLoggingInterceptor()
