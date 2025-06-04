@@ -1,4 +1,4 @@
-package feature.productlist.presentation;
+package feature.productlist;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

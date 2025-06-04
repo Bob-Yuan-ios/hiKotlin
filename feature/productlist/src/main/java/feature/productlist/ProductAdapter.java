@@ -1,4 +1,4 @@
-package feature.productlist.presentation;
+package feature.productlist;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;

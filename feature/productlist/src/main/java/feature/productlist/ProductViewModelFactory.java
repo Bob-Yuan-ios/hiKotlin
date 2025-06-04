@@ -1,4 +1,4 @@
-package feature.productlist.presentation;
+package feature.productlist;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
