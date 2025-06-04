@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.hello.databinding.ActivityLoginBinding;
 
 import java.util.concurrent.TimeUnit;
+
+import com.example.viewpage.TabRootActivity;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 
 import io.reactivex.Observable;
@@ -37,7 +39,14 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnLogin.setOnClickListener( v -> {
             Log.i("my111", "成功登录");
 
-            Intent intent = new Intent(this, feature.productlist.presentation.ProductActivity.class);
+            boolean cross = isTabular();
+            Class destination;
+            if (cross){
+                destination =  feature.productlist.presentation.ProductActivity.class;
+            }else {
+                destination = TabRootActivity.class;
+            }
+            Intent intent = new Intent(this, destination);
             this.startActivity(intent);
         });
 
@@ -95,5 +104,9 @@ public class LoginActivity extends AppCompatActivity {
     //判断密码合法
     private boolean isPasswordValid(String password){
         return password != null && password.trim().length() >= 6;
+    }
+
+    private boolean isTabular() {
+        return true;
     }
 }
