@@ -1,4 +1,4 @@
-package feature.productlist;
+package feature.product;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.productlist.R;
+import com.example.product.R;
 
 import java.util.List;
 

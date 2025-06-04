@@ -1,4 +1,4 @@
-package feature.productlist;
+package feature.product;
 
 import android.os.Bundle;
 
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.productlist.databinding.ActivityProductBinding;
+import com.example.product.databinding.ActivityProductBinding;
 
 import data.product.impl.ProductRepositoryImpl;
 import domain.product.respository.ProductRepository;

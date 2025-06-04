@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
             boolean cross = isTabular();
             Class destination;
             if (cross){
-                destination = feature.productlist.ProductActivity.class;
+                destination = feature.product.ProductActivity.class;
             }else {
                 destination = feature.tabroot.TabRootActivity.class;
             }

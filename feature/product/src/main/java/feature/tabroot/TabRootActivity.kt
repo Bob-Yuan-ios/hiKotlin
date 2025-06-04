@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import com.example.productlist.databinding.ActivityTabrootBinding
-import com.example.productlist.R
+
+import com.example.product.R
+import com.example.product.databinding.ActivityTabrootBinding
+
 
 class TabRootActivity: AppCompatActivity() {
 

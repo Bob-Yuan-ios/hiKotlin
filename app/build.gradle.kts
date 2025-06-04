@@ -26,8 +26,6 @@ android {
         versionName = "1.0"
 
 //        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner = "com.example.hello.MyInstrumentation"
-
     }
 
     buildTypes {
@@ -51,8 +49,8 @@ android {
 
 dependencies {
 
+    implementation(project(":feature:product"))
     // 自有的
-    implementation(project(":feature:productlist"))
 
     // 系统的
     implementation(libs.androidx.core.ktx)

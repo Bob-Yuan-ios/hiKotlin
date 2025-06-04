@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="feature.productlist.ProductActivity" />
+        <activity android:name="feature.product.ProductActivity" />
         <activity android:name="feature.tabroot.TabRootActivity" />
 
     </application>
