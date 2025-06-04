@@ -31,7 +31,7 @@
         </activity>
 
         <activity android:name="feature.productlist.presentation.ProductActivity" />
-        <activity android:name="com.example.viewpage.TabRootActivity" />
+        <activity android:name="feature.viewpage.TabRootActivity" />
 
     </application>
 

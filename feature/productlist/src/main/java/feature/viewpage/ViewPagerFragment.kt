@@ -1,10 +1,11 @@
-package com.example.viewpage
+package feature.viewpage
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.example.hello.R
-import com.example.hello.databinding.FragmentViewPagerBinding
+import com.example.productlist.R
+import com.example.productlist.databinding.FragmentViewPagerBinding
+
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ViewPagerFragment: Fragment (R.layout.fragment_view_pager){

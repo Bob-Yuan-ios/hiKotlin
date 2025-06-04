@@ -11,7 +11,7 @@ import com.example.hello.databinding.ActivityLoginBinding;
 
 import java.util.concurrent.TimeUnit;
 
-import com.example.viewpage.TabRootActivity;
+import feature.viewpage.TabRootActivity;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 
 import io.reactivex.Observable;
@@ -107,6 +107,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isTabular() {
-        return true;
+        return false;
     }
 }

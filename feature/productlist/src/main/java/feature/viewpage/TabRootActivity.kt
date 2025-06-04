@@ -1,11 +1,11 @@
-package com.example.viewpage
+package feature.viewpage
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import com.example.hello.R
-import com.example.hello.databinding.ActivityTabrootBinding
+import com.example.productlist.databinding.ActivityTabrootBinding
+import com.example.productlist.R
 
 class TabRootActivity: AppCompatActivity() {
 
