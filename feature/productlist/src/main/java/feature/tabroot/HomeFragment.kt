@@ -1,21 +1,21 @@
-package feature.viewpage
+package feature.tabroot
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.productlist.R
-import com.example.productlist.databinding.FragmentNotificationBinding
+import com.example.productlist.databinding.FragmentHomeBinding
 
-class NotificationsFragment: Fragment(R.layout.fragment_notification) {
+class HomeFragment: Fragment(R.layout.fragment_home) {
 
-    private var _binding: FragmentNotificationBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        _binding = FragmentNotificationBinding.bind(view)
-        binding.textView.text = "Notifications"
+        _binding = FragmentHomeBinding.bind(view)
+        binding.textView.text = "Home Page"
     }
 
     override fun onDestroyView() {

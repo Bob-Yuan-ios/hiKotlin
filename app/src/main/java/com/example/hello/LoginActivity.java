@@ -11,7 +11,6 @@ import com.example.hello.databinding.ActivityLoginBinding;
 
 import java.util.concurrent.TimeUnit;
 
-import feature.viewpage.TabRootActivity;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 
 import io.reactivex.Observable;
@@ -44,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
             if (cross){
                 destination =  feature.productlist.presentation.ProductActivity.class;
             }else {
-                destination = TabRootActivity.class;
+                destination = feature.tabroot.TabRootActivity.class;
             }
             Intent intent = new Intent(this, destination);
             this.startActivity(intent);

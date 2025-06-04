@@ -5,6 +5,6 @@
     app:startDestination="@id/viewPagerFragment">
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="feature.viewpage.ViewPagerFragment"
+        android:name="feature.tabroot.ViewPagerFragment"
         android:label="ViewPagerFragment" />
 </navigation>
